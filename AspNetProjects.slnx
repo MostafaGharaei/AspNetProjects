@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/01-AspNetCoreRestApiECommerce/" />
+  <Folder Name="/01-AspNetCoreRestApiECommerce/docs/" />
+  <Folder Name="/01-AspNetCoreRestApiECommerce/src/">
+    <Project Path="01-AspNetCoreRestApiECommerce/src/ECommerce.Application/ECommerce.Application.csproj" />
+    <Project Path="01-AspNetCoreRestApiECommerce/src/ECommerce.Domain/ECommerce.Domain.csproj" />
+    <Project Path="01-AspNetCoreRestApiECommerce/src/ECommerce.Infrastructure/ECommerce.Infrastructure.csproj" />
+    <Project Path="01-AspNetCoreRestApiECommerce/src/ECommerce.WebApi/ECommerce.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/01-AspNetCoreRestApiECommerce/tests/" />
+</Solution>
