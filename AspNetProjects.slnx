@@ -1,5 +1,7 @@
 <Solution>
-  <Folder Name="/01-AspNetCoreRestApiECommerce/" />
+  <Folder Name="/01-AspNetCoreRestApiECommerce/">
+    <File Path="README.md" />
+  </Folder>
   <Folder Name="/01-AspNetCoreRestApiECommerce/docs/" />
   <Folder Name="/01-AspNetCoreRestApiECommerce/src/">
     <Project Path="01-AspNetCoreRestApiECommerce/src/ECommerce.Application/ECommerce.Application.csproj" />
@@ -7,5 +9,8 @@
     <Project Path="01-AspNetCoreRestApiECommerce/src/ECommerce.Infrastructure/ECommerce.Infrastructure.csproj" />
     <Project Path="01-AspNetCoreRestApiECommerce/src/ECommerce.WebApi/ECommerce.WebApi.csproj" />
   </Folder>
-  <Folder Name="/01-AspNetCoreRestApiECommerce/tests/" />
+  <Folder Name="/01-AspNetCoreRestApiECommerce/tests/">
+    <Project Path="01-AspNetCoreRestApiECommerce/tests/ECommerce.IntegrationTests/ECommerce.IntegrationTests.csproj" Id="57a55fdf-8da4-48ca-b745-3c9be58ae276" />
+    <Project Path="01-AspNetCoreRestApiECommerce/tests/ECommerce.UnitTests/ECommerce.UnitTests.csproj" Id="a4fe2377-cc5e-4b05-a6f2-b4e6b094dae5" />
+  </Folder>
 </Solution>
