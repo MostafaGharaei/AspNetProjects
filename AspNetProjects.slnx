@@ -2,7 +2,10 @@
   <Folder Name="/01-AspNetCoreRestApiECommerce/">
     <File Path="README.md" />
   </Folder>
-  <Folder Name="/01-AspNetCoreRestApiECommerce/docs/" />
+  <Folder Name="/01-AspNetCoreRestApiECommerce/docs/">
+    <File Path="README.md" />
+    <File Path="testing.md" />
+  </Folder>
   <Folder Name="/01-AspNetCoreRestApiECommerce/src/">
     <Project Path="01-AspNetCoreRestApiECommerce/src/ECommerce.Application/ECommerce.Application.csproj" />
     <Project Path="01-AspNetCoreRestApiECommerce/src/ECommerce.Domain/ECommerce.Domain.csproj" />
