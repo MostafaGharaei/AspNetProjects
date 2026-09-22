@@ -1,4 +1,4 @@
-﻿namespace ECommerce.Infrastructure.Caching;
+﻿namespace ECommerce.Application.Common.Caching;
 
 /// <summary>
 /// Abstraction over distributed cache (Redis).

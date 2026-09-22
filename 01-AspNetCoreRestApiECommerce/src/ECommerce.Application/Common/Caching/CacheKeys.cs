@@ -1,4 +1,4 @@
-﻿namespace ECommerce.Infrastructure.Caching;
+﻿namespace ECommerce.Application.Common.Caching;
 
 /// <summary>
 /// Centralized cache key factory to prevent key collisions and typos.
