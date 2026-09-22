@@ -1,7 +1,5 @@
 <Solution>
-  <Folder Name="/01-AspNetCoreRestApiECommerce/">
-    <File Path="README.md" />
-  </Folder>
+  <Folder Name="/01-AspNetCoreRestApiECommerce/" />
   <Folder Name="/01-AspNetCoreRestApiECommerce/docs/">
     <File Path="README.md" />
     <File Path="testing.md" />
