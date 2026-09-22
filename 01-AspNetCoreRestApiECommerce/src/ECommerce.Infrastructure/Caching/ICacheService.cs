@@ -1,0 +1,13 @@
+﻿namespace ECommerce.Infrastructure.Caching;
+
+/// <summary>
+/// Abstraction over distributed cache (Redis).
+/// Keeps application code decoupled from the caching provider.
+/// </summary>
+public interface ICacheService
+{
+    Task<T?> GetAsync<T>(string key, CancellationToken ct = default);
+    Task SetAsync<T>(string key, T value, TimeSpan? ttl = null, CancellationToken ct = default);
+    Task RemoveAsync(string key, CancellationToken ct = default);
+    Task RemoveByPrefixAsync(string prefix, CancellationToken ct = default);
+}
