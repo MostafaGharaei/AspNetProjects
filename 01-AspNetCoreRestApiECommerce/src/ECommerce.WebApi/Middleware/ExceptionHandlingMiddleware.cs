@@ -33,7 +33,7 @@ public class ExceptionHandlingMiddleware
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
             var response = ApiResponse<object>.Fail(
-                "An unexpected error occurred.",
+                $"DEBUG → {ex.GetType().Name}: {ex.Message} | Inner: {ex.InnerException?.Message} | Stack: {ex.StackTrace}",
                 context.Response.StatusCode);
 
             var json = JsonSerializer.Serialize(response, new JsonSerializerOptions

@@ -1,4 +1,5 @@
-﻿using ECommerce.Application.DTOs.Products;
+﻿using ECommerce.Application.Common.Caching;
+using ECommerce.Application.DTOs.Products;
 using ECommerce.Application.Services;
 using ECommerce.Domain.Entities;
 using ECommerce.Domain.Interfaces;
@@ -14,13 +15,35 @@ public class ProductServiceTests
 {
     private readonly Mock<IUnitOfWork> _uowMock = new();
     private readonly Mock<IGenericRepository<Product>> _productRepoMock = new();
+    private readonly Mock<ICacheService> _cacheMock = new();
     private readonly ProductService _sut;
 
     public ProductServiceTests()
     {
         // Repository<Product>() always returns the same mocked repo
         _uowMock.Setup(u => u.Repository<Product>()).Returns(_productRepoMock.Object);
-        _sut = new ProductService(_uowMock.Object);
+
+        // Default cache behavior:
+        // - Cache lookups return null -> force DB calls in tests
+        _cacheMock
+            .Setup(c => c.GetAsync<List<ProductDto>>(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync((List<ProductDto>?)null);
+        _cacheMock
+            .Setup(c => c.GetAsync<ProductDto>(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync((ProductDto?)null);
+
+        // - No-op for set/remove operations
+        _cacheMock
+            .Setup(c => c.SetAsync(It.IsAny<string>(), It.IsAny<object>(), It.IsAny<TimeSpan?>(), It.IsAny<CancellationToken>()))
+            .Returns(Task.CompletedTask);
+        _cacheMock
+            .Setup(c => c.RemoveAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+            .Returns(Task.CompletedTask);
+        _cacheMock
+            .Setup(c => c.RemoveByPrefixAsync(It.IsAny<string>(), It.IsAny<CancellationToken>()))
+            .Returns(Task.CompletedTask);
+
+        _sut = new ProductService(_uowMock.Object, _cacheMock.Object);
     }
 
     [Fact]

@@ -1,8 +1,11 @@
-﻿using ECommerce.Infrastructure.Persistence;
+﻿using ECommerce.Application.Common.Caching;
+using ECommerce.Infrastructure.Persistence;
+using ECommerce.IntegrationTests.Fakes;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace ECommerce.IntegrationTests.Factories;
 
@@ -30,8 +33,8 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
             if (dbContextDescriptor is not null) services.Remove(dbContextDescriptor);
 
             // Add in-memory database with a unique name per factory
-            services.AddDbContext<AppDbContext>(options =>
-                options.UseInMemoryDatabase(_dbName));
+            services.RemoveAll<ICacheService>();
+            services.AddSingleton<ICacheService, InMemoryCacheService>();
         });
     }
 }

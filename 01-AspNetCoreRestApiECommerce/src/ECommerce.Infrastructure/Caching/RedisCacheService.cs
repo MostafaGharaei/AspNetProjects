@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Caching.Distributed;
+﻿using ECommerce.Application.Common.Caching;
+using Microsoft.Extensions.Caching.Distributed;
 using System.Text.Json;
 
 namespace ECommerce.Infrastructure.Caching;
