@@ -4,6 +4,7 @@
   </Folder>
   <Folder Name="/01-AspNetCoreRestApiECommerce/docs/">
     <File Path="data-access.md" />
+    <File Path="deployment-docker.md" />
     <File Path="README.md" />
     <File Path="testing.md" />
   </Folder>

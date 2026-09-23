@@ -34,7 +34,7 @@ public static class DependencyInjection
             services.AddStackExchangeRedisCache(options =>
             {
                 options.Configuration = redisConfig;
-                // Optional: prefix all keys so they are easier to find in redis-cli
+                // Optional: prefix keys to make them easy to find in redis-cli
                 options.InstanceName = "ECommerce:";
             });
         }
