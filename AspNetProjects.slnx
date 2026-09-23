@@ -1,5 +1,7 @@
 <Solution>
-  <Folder Name="/01-AspNetCoreRestApiECommerce/" />
+  <Folder Name="/01-AspNetCoreRestApiECommerce/">
+    <File Path="docker-compose.yml" />
+  </Folder>
   <Folder Name="/01-AspNetCoreRestApiECommerce/docs/">
     <File Path="data-access.md" />
     <File Path="README.md" />
